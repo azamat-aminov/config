@@ -1,1 +1,44 @@
-
+example:
+  property: I AM DEV
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ostock_dev
+    username: postgres
+    password: password
+    driverClassName: org.postgresql.Driver
+management:
+  info:
+    git:
+      mode: full
+    env:
+      enabled: true
+  endpoint:
+    env:
+      post:
+        enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: '*'
+        exclude: heapdump
+#management:
+#  endpoints:
+#    web:
+#      base-path: /management
+#      exposure:
+#        include: '*'
+#    enabled-by-default: false
+#  endpoint:
+#    health:
+#      enabled: true
+#      show-details: always
+#  health:
+#    db:
+#      enabled: false
+#    disk-space:
+#      enabled: true
